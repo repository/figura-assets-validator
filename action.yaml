@@ -1,0 +1,22 @@
+name: FiguraMC
+description: Validate Live Assets
+author: asdfdhjdkswfhdskfjh
+
+branding:
+  icon: check-circle
+  color: purple
+
+inputs:
+  path:
+    description: Path to assets
+    required: true
+
+outputs:
+  issues_table:
+    description: A markdown formatted table of issues
+  has_issues:
+    description: true/false if issues were found
+
+runs:
+  using: node20
+  main: index.js
