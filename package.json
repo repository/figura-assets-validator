@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsx watch src/main.ts",
     "start": "node dist/main.js",
-    "build": "esbuild src/main.ts --bundle --platform=node --target=es2021 --outfile=index.js --minify",
+    "build": "esbuild src/main.ts --bundle --platform=node --target=es2021 --outfile=action.cjs --minify",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix"
   },
