@@ -80,8 +80,14 @@ async function main() {
   }
 
   const getBlobLink = () => {
-    if (process.env["GITHUB_REPOSITORY"] && context.repo && context.sha) {
-      return `https://github.com/${context.repo.owner}/${context.repo.repo}/blob/${context.sha}`;
+    if (process.env["GITHUB_REPOSITORY"]) {
+      const repoInput = getInput("repo", { required: false });
+      const repo = repoInput.length > 0 ? repoInput : `${context.repo.owner}/${context.repo.repo}`;
+
+      const shaInput = getInput("sha", { required: false });
+      const sha = shaInput.length > 0 ? shaInput : context.sha;
+
+      return `https://github.com/${repo}/blob/${sha}`;
     } else {
       return null;
     }

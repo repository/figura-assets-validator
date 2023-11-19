@@ -10,6 +10,12 @@ inputs:
   path:
     description: Path to assets
     required: true
+  repo:
+    description: Repository in owner/repo format (for linking to)
+    required: false
+  sha:
+    description: Commit SHA (for linking to)
+    required: false
 
 outputs:
   issues_table:
